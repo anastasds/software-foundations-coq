@@ -235,19 +235,19 @@ Proof. reflexivity.  Qed.
     its inputs are [false]. *)
 
 Definition nandb (b1:bool) (b2:bool) : bool :=
-  (negb (andb b1 b2)).
+  (* FILL IN HERE *) admit.
 
 (** Remove "[Admitted.]" and fill in each proof with 
     "[Proof. reflexivity. Qed.]" *)
 
 Example test_nandb1:               (nandb true false) = true.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_nandb2:               (nandb false false) = true.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_nandb3:               (nandb false true) = true.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_nandb4:               (nandb true true) = false.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 (** [] *)
 
 (** **** Exercise: 1 star (andb3)  *)
@@ -256,16 +256,16 @@ Proof. reflexivity. Qed.
     otherwise. *)
 
 Definition andb3 (b1:bool) (b2:bool) (b3:bool) : bool :=
-(andb (andb b1 b2) b3).
+  (* FILL IN HERE *) admit.
 
 Example test_andb31:                 (andb3 true true true) = true.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_andb32:                 (andb3 false true true) = false.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_andb33:                 (andb3 true false true) = false.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_andb34:                 (andb3 true true false) = false.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 (** [] *)
 
 (* ###################################################################### *)
@@ -490,16 +490,12 @@ Fixpoint exp (base power : nat) : nat :=
     Translate this into Coq. *)
 
 Fixpoint factorial (n:nat) : nat := 
-  match n with
-    | 0 => 1
-    | 1 => 1
-    | S n' => mult n (factorial n')
-  end.
+(* FILL IN HERE *) admit.
 
 Example test_factorial1:          (factorial 3) = 6.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_factorial2:          (factorial 5) = (mult 10 12).
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 
 (** [] *)
 
@@ -575,14 +571,14 @@ Proof. reflexivity.  Qed.
     this one, define it in terms of a previously defined function. *)
 
 Definition blt_nat (n m : nat) : bool :=
-(ble_nat 1 (minus m n)).
+  (* FILL IN HERE *) admit.
 
 Example test_blt_nat1:             (blt_nat 2 2) = false.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_blt_nat2:             (blt_nat 2 4) = true.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 Example test_blt_nat3:             (blt_nat 4 2) = false.
-Proof. reflexivity. Qed.
+(* FILL IN HERE *) Admitted.
 
 (** [] *)
 
@@ -724,13 +720,7 @@ Proof.
 Theorem plus_id_exercise : forall n m o : nat,
   n = m -> m = o -> n + m = m + o.
 Proof.
-  intros n m o.
-  intros H J.
-  rewrite -> H.
-  rewrite <- J.
-  reflexivity.
-  Qed.
-
+  (* FILL IN HERE *) Admitted.
 (** [] *)
 
 (** As we've seen in earlier examples, the [Admitted] command
@@ -760,14 +750,8 @@ Theorem mult_S_1 : forall n m : nat,
   m = S n -> 
   m * (1 + n) = m * m.
 Proof.
-  intros n m.
-  intros H.
-  rewrite -> plus_1_l.
-  rewrite -> H.
-  reflexivity.
-Qed.
-
-  (** [] *)
+  (* FILL IN HERE *) Admitted.
+(** [] *)
 
 
 (* ###################################################################### *)
