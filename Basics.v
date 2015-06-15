@@ -851,9 +851,12 @@ Proof.
 Theorem zero_nbeq_plus_1 : forall n : nat,
   beq_nat 0 (n + 1) = false.
 Proof.
-  (* FILL IN HERE *) Admitted.
-
-(** [] *)
+  intros n.
+  destruct n.
+  reflexivity.
+  reflexivity.
+  Qed.
+  (** [] *)
 
 (* ###################################################################### *)
 (** * More Exercises *)
@@ -867,14 +870,29 @@ Theorem identity_fn_applied_twice :
   (forall (x : bool), f x = x) ->
   forall (b : bool), f (f b) = b.
 Proof.
-  (* FILL IN HERE *) Admitted.
-
+  intros f H b.
+  rewrite -> H.
+  rewrite -> H.
+  reflexivity.
+  Qed.
 (** Now state and prove a theorem [negation_fn_applied_twice] similar
     to the previous one but where the second hypothesis says that the
     function [f] has the property that [f x = negb x].*)
 
-(* FILL IN HERE *)
-(** [] *)
+Theorem negation_fn_applied_twice :
+  forall (f: bool -> bool),
+    (forall (x : bool), f x = negb x) ->
+    forall (b : bool), f (f b) = b.
+Proof.
+  intros f H b.
+  destruct b.
+  rewrite -> H.
+  rewrite -> H.
+  reflexivity.
+  rewrite -> H.
+  rewrite -> H.
+  reflexivity.
+  Qed.
 
 (** **** Exercise: 2 stars (andb_eq_orb)  *)
 (** Prove the following theorem.  (You may want to first prove a
